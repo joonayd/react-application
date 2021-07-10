@@ -11,13 +11,15 @@ function App() {
     <Router>
       <div>
         <TopMenu />
-        <Switch>
-          <Route path="/products" component={Products} />
-          <Route path="/contact-us" component={ContactUs} />
-          <Route path="/not-found" component={NotFound} />
-          <Route path="/" exact component={LandingPage} />
-          <Redirect to="/not-found" />
-        </Switch>
+        <div style={{ padding: "10px" }}>
+          <Switch>
+            <Route path="/products" component={Products} />
+            <Route path="/contact-us" component={ContactUs} />
+            <Route path="/not-found" component={NotFound} />
+            <Route path="/" exact component={LandingPage} />
+            <Redirect to="/not-found" />
+          </Switch>
+        </div>
       </div>
     </Router>
   );

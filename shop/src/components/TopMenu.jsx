@@ -1,28 +1,37 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+
 import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  link: {
+    color: "white",
+    paddingRight: "1rem",
+  },
+}));
 
 const TopMenu = () => {
+  const classes = useStyles();
   return (
-    <div>
-      <ul>
-        <li style={{ display: "inline", padding: "5px" }}>
-          <Link to="/">Home</Link>
-        </li>
-        <li style={{ display: "inline", padding: "5px" }}>
-          <Link to="/products">Products</Link>
-        </li>
-        <li style={{ display: "inline", padding: "5px" }}>
-          <Link to="/contact-us">Contact Us</Link>
-        </li>
-        <li style={{ display: "inline", padding: "5px" }}>
-          <Link to="/login">Login</Link>
-        </li>
-        <li style={{ display: "inline", padding: "5px" }}>
-          <Button color="secondary">Signup</Button>
-        </li>
-      </ul>
-    </div>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6">
+          <Link to="/" className={classes.link}>
+            Home
+          </Link>
+          <Link to="/products" className={classes.link}>
+            Products
+          </Link>
+          <Link to="/contact-us" className={classes.link}>
+            Contact Us
+          </Link>
+          <Link to="/login" className={classes.link}>
+            Login
+          </Link>
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
