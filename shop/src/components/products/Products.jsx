@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   addBtn: { position: "absolute", bottom: theme.spacing(2), right: theme.spacing(2) },
 }));
 
-const Products = () => {
+const Products = (props) => {
   const [products, SetProducts] = React.useState([]);
   const classes = useStyles();
   const getData = () => {
@@ -25,11 +25,20 @@ const Products = () => {
   };
   // getData();
   React.useEffect(getData, []);
-  console.log("inside Products component");
+  // console.log("inside Products component");
+  const handleNewProductClick = () => {
+    // console.log(props);
+    props.history.push("/products/new");
+  };
   return (
     <div>
       <h1>Products</h1>
-      <Fab color="primary" aria-label="add" className={classes.addBtn}>
+      <Fab
+        color="primary"
+        aria-label="add"
+        className={classes.addBtn}
+        onClick={handleNewProductClick}
+      >
         <AddIcon />
       </Fab>
 

@@ -23,6 +23,9 @@ const TopMenu = () => {
           <Link to="/products" className={classes.link}>
             Products
           </Link>
+          <Link to="/products/new" className={classes.link}>
+            New Product
+          </Link>
           <Link to="/contact-us" className={classes.link}>
             Contact Us
           </Link>
